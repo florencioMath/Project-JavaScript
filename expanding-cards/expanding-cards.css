@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card {
+  margin: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  height: 80vh;
+  position: relative;
+}
+
+img {
+  max-width: 100px;
+  height: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+}
+
+.active img {
+  width: 50vw;
+  max-width: 50vw;
+}
