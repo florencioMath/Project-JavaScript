@@ -19,6 +19,7 @@
   margin: 0.5rem;
   position: relative;
   display: inline-block;
+  transition: all 500ms ease-in;
 }
 
 img {
@@ -28,9 +29,39 @@ img {
   cursor: pointer;
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cardTitle {
+  color: black;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  opacity: 0;
+}
+
+.cardTitle::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 21px;
+  width: 1rem;
+  border: 1px solid sienna;
+  transition: opacity 0.5s ease-in 0.5s;
+}
+
+img:hover {
+  transition: 500ms ease-in;
+  border: 2px solid lightseagreen;
+  opacity: 0.7;
 }
 
 .active {
   flex: 5;
+}
+
+.active .cardTitle {
+  transition: opacity 0.5s ease-in 0.5s;
+  opacity: 1;
 }
