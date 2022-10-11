@@ -5,31 +5,32 @@
 }
 
 .container {
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   overflow: hidden;
+  margin: 0;
 }
 
 .card {
+  height: 80vh;
+  flex: 0.5;
   margin: 0.5rem;
   position: relative;
-  cursor: pointer;
-  height: 80vh;
-  position: relative;
+  display: inline-block;
 }
 
 img {
-  max-width: 100px;
-  height: inherit;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
   border-radius: 50px;
 }
 
-.active img {
-  width: 50vw;
-  max-width: 50vw;
+.active {
+  flex: 5;
 }
