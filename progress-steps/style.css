@@ -17,6 +17,7 @@
   background: #739c69;
   border-radius: 0.4rem;
   position: absolute;
+  transition: 500ms ease;
 }
 
 .progress::before {
@@ -36,9 +37,13 @@
   z-index: 100;
   background: #f7f6f8;
   font-weight: 600;
+  transition: 600ms ease;
 }
+
 .active {
   border-color: #739c69;
+  background: white;
+  transition: 600ms ease;
 }
 
 .buttonWrapper {
