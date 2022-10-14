@@ -1,47 +1,98 @@
-.container-circle {
-  border: 1px solid black;
-  width: 250px;
-  height: 250px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-direction: column-reverse;
-  position: fixed;
-  z-index: 10;
-  padding: 3rem;
-  position: fixed;
-  top: -125px;
-  left: -125px;
-  background-color: whitesmoke;
-}
-
-#abrir,
-#fechar {
-  cursor: pointer;
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: darkolivegreen;
-  height: 100vh;
-  width: 100vw;
-  padding: 5rem;
-}
-
-.content-text {
-  padding: 1rem;
-  text-align: justify;
-}
-
-.content-img {
-  width: 100%;
+* {
   box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.circle-container {
+  top: -100px;
+  left: -100px;
+  position: fixed;
+}
+
+.circle {
+  background: lightseagreen;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
   padding: 1rem;
+  margin: 1rem 0px 0px 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  position: absolute;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+}
+
+.circle button#open {
+  left: 50%;
+}
+
+.circle button#close {
+  top: 50%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container-rotanting {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 2rem;
+  background: lightslategray;
+  transform-origin: top left;
+  transition: transform 500ms linear;
+}
+
+.container-rotanting.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container-rotanting.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.container-rotanting.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  z-index: 100;
+  bottom: 20vh;
+  left: 0px;
+}
+
+nav ul {
+  padding-left: 1rem;
+}
+
+nav ul li {
+  margin: 1rem 0px 0px 0px;
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in;
+}
+
+nav ul li:nth-child(1) {
+  margin-left: 2rem;
+  transform: translateX(-150%);
+}
+
+nav ul li:nth-child(2) {
+  margin-left: 3rem;
+  transform: translateX(-200%);
+}
+
+nav ul li:nth-child(3) {
+  margin-left: 4rem;
+  transform: translateX(-250%);
 }
