@@ -1,0 +1,42 @@
+.container {
+  background: #f7f6f8;
+}
+
+.inputText {
+  width: 0;
+  height: 50px;
+  font-size: 1rem;
+  border: none;
+  background: #d9d3da;
+  border-radius: 0.4rem 0px 0px 0.4rem;
+  transition: width 500ms ease;
+}
+
+.inputText:focus {
+  outline: none;
+}
+
+.buttonSearch {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background: #d9d3da;
+  border-radius: 0.4rem;
+  transition: transform 500ms ease;
+}
+
+.buttonSearch:hover {
+  transition: all 0.5s ease;
+  background: #aca7adfd;
+}
+
+i {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.expand {
+  width: 50%;
+  padding-left: 1rem;
+}
