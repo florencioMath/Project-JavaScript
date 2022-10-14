@@ -3,9 +3,9 @@ const close = document.getElementById("close");
 const containerRotanting = document.querySelector(".container-rotanting");
 
 open.addEventListener("click", () =>
-  containerRotanting.classList.add("show-nav")
+  containerRotanting.classList.add("rotate")
 );
 
 close.addEventListener("click", () =>
-  containerRotanting.classList.remove("show-nav")
+  containerRotanting.classList.remove("rotate")
 );
