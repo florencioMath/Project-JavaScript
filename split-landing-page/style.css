@@ -1,0 +1,44 @@
+img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.pageOne,
+.pageTwo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 50%;
+}
+
+h2,
+a {
+  position: fixed;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+a {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 10rem;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 0.4rem;
+}
+
+.pageOne:hover,
+.pageTwo:hover {
+  transition: all 1s ease-in;
+  width: 100%;
+}
