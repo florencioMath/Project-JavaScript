@@ -1,0 +1,45 @@
+.container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: 15rem;
+  width: 25rem;
+  background: #739c69;
+  margin: 1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  transform: translateX(400%);
+  transition: transform 1s ease-out;
+}
+
+.content::before {
+  content: "";
+  height: 13rem;
+  width: 23rem;
+  background: transparent;
+  position: absolute;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  box-shadow: #4961438c 0px 0px 10px 5px;
+  cursor: pointer;
+}
+
+.content:hover::before {
+  box-shadow: #273323d8 0px 0px 10px 3px;
+}
+
+.content:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.content.animeContent {
+  transform: translateX(0);
+}
