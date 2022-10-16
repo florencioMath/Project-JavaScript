@@ -39,16 +39,24 @@
 .transition {
   z-index: 2;
   width: 200%;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
 }
 
-.pageOneTitle,
 .pageTwoTitle {
   position: absolute;
   margin-bottom: 20rem;
   font-size: 3rem;
   font-weight: 800;
   color: white;
+  white-space: nowrap;
+}
+
+.pageOneTitle {
+  position: absolute;
+  margin-bottom: 20rem;
+  font-size: 3rem;
+  font-weight: 800;
+  color: black;
   white-space: nowrap;
 }
 
@@ -63,6 +71,11 @@
   font-size: 1.5rem;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.buttonPageOne {
+  border: 2px solid black;
+  color: black;
 }
 
 .buttonPageTwo:hover {
