@@ -6,10 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Input Wave</title>
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../form-input-wave/index.html" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <section class="container">Form Input Wave</section>
+    <section class="container">
+      <form class="containerForm">
+        <h2 class="formHeader">Faça Login</h2>
+
+        <div class="containerLabelInput">
+          <label for="name" id="labelName">Nome</label>
+          <input type="text" name="name" id="inputName" />
+        </div>
+
+        <div class="containerLabelInput">
+          <label for="password" id="labelPassword">Senha</label>
+          <input type="text" name="password" id="inputPassword" />
+        </div>
+
+        <button class="btnLogin">Login</button>
+
+        <p class="registerText">
+          Não tem uma conta? <a href="#">Registre-se</a>
+        </p>
+      </form>
+    </section>
+
     <footer class="footer">
       <h2 class="challengeTitle">Form Input Wave</h2>
       <a class="buttonInicio" href="../index.html">Início</a>
