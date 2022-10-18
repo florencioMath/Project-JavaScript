@@ -13,27 +13,3 @@ labels.forEach((label) => {
     )
     .join("");
 });
-
-// inputName.addEventListener("focus", () => {
-//   labelName.classList.add("formWave");
-// });
-
-// // inputName.addEventListener("focusout", () => {
-// //   labelName.classList.remove("formWave");
-// // });
-
-// inputPassword.addEventListener("focus", () => {
-//   labelPassword.classList.add("formWave");
-// });
-
-// inputPassword.addEventListener("focusout", () => {
-//   labelPassword.classList.remove("formWave");
-// });
-
-// labelName.addEventListener("click", () => {
-//   inputName.focus();
-// });
-
-// labelPassword.addEventListener("click", () => {
-//   inputPassword.focus();
-// });
