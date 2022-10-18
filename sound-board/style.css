@@ -1,0 +1,23 @@
+.container {
+  padding: 2rem 5rem 2rem 5rem;
+  background: #121212;
+}
+
+.buttonCreated {
+  margin: 1rem;
+  height: 3rem;
+  width: 8rem;
+  background: #739c69;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.buttonCreated:hover {
+  transition: all 0.7s ease;
+  background: #4c6646;
+}
