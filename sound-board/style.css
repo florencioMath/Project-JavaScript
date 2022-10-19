@@ -3,21 +3,91 @@
   background: #121212;
 }
 
+#buttons {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .buttonCreated {
   margin: 1rem;
   height: 3rem;
   width: 8rem;
   background: #739c69;
   box-sizing: border-box;
-  cursor: pointer;
   border: none;
-  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0.2rem 0.2rem 0px;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1;
+  margin-left: 3rem;
 }
 
-.buttonCreated:hover {
+.btnPlay:hover,
+.btnStop:hover {
   transition: all 0.7s ease;
   background: #4c6646;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.btnPlay {
+  padding: 1.5rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #739c69;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem 0px 0px 0.2rem;
+  position: absolute;
+}
+
+.btnStop {
+  padding: 1.5rem;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #739c69;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem 0px 0px 0.2rem;
+  position: absolute;
+  display: none;
+}
+
+.btnPlay::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f04b";
+  display: flex;
+  position: absolute;
+  align-self: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.btnStop::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f04d";
+  display: flex;
+  position: absolute;
+  align-self: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 2rem;
 }
