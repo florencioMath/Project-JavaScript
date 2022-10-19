@@ -1,25 +1,28 @@
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "83b368dd9dmsh5c9a48fe89b5871p1a712cjsn3bb4323bf068",
-//     "X-RapidAPI-Host": "dad-jokes.p.rapidapi.com",
-//   },
-// };
+function dadjokes() {
+  const joke = document.getElementById("joke");
+  const btnAnotherJoke = document.getElementById("btnAnotherJoke");
 
-// fetch("https://dad-jokes.p.rapidapi.com/random/joke", options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
+  async function getjoke() {
+    const options = {
+      headers: { Accept: "application/json" },
+    };
 
-const joke = document.getElementById("joke");
+    try {
+      const response = await fetch("https://icanhazdadjoke.com", options);
+      const data = await response.json();
 
-async function getjoke() {
-  const response = await fetch("https://icanhazdadjoke.com", {
-    headers: { Accept: "application/json" },
+      joke.innerText = data.joke;
+    } catch (error) {
+      joke.innerText = "Failed to load joke.";
+      console.log(error);
+    }
+  }
+
+  btnAnotherJoke.addEventListener("click", () => {
+    getjoke();
   });
-  const data = await response.json();
 
-  joke.innerText = data.joke;
+  getjoke();
 }
 
-getjoke();
+dadjokes();
