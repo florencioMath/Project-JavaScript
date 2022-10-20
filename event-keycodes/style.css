@@ -1,3 +1,48 @@
-p {
-  font-size: 2rem;
+.container {
+  background: #121212;
+  padding: 2rem;
+}
+
+.container p {
+  padding: 1rem;
+  color: black;
+  background: lightgoldenrodyellow;
+  border: 1px solid #fafafa;
+  border-radius: 0.2rem;
+}
+
+.containerKey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid #fafafa;
+  border-radius: 0.2rem;
+  height: 200px;
+  max-height: 100%;
+  width: 500px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: lightgoldenrodyellow;
+  border: 1px solid #fafafa;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
+  min-height: 50px;
+  min-width: 120px;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.key span {
+  color: #fafafa;
+  position: absolute;
+  bottom: 120%;
+  font-size: 0.8rem;
 }
