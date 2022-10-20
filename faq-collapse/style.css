@@ -3,7 +3,98 @@
   padding: 2rem;
 }
 
-p {
+.wrapperFaqs {
+  width: 100%;
+  max-width: 800px;
+}
+
+.faq {
+  height: 100px;
+  background: #739c69;
+  margin: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.faqTitle {
+  width: 80%;
+  z-index: 1;
+}
+
+.faqText {
+  width: 80%;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: 300;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.faqToggle {
+  width: fit-content;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: flex-end;
+  position: absolute;
+  z-index: 1;
+}
+
+i {
+  font-weight: bold;
   font-size: 2rem;
-  color: #fafafa;
+  cursor: pointer;
+}
+
+.faqText {
+  display: none;
+}
+
+/* active for show the faqs */
+
+.active .faqText {
+  display: block;
+}
+
+.active .faqToggle .fa-circle-chevron-up {
+  display: block;
+}
+
+.active .faqToggle .fa-circle-chevron-down {
+  display: none;
+}
+
+.faqToggle .fa-circle-chevron-up {
+  display: none;
+}
+
+.faq.active {
+  height: 150px;
+  background: #63855a;
+  box-shadow: rgba(115, 156, 105, 0.808) 0px 2px 10px,
+    rgba(115, 156, 105, 0.678) 0px 2px 18px;
+}
+
+.faq.active::before,
+.faq.active::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  display: flex;
+  justify-content: end;
+  right: 15px;
+  position: absolute;
+  font-weight: 600;
+  font-size: 8rem;
+  opacity: calc(0.1);
+}
+
+.faq.active::after {
+  top: -15px;
+  right: -15px;
+  font-size: 6rem;
 }
