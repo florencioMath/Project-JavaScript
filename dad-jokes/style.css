@@ -15,7 +15,6 @@
   justify-content: space-between;
   background: #f7f6f8;
   padding: 1rem;
-  overflow: scroll;
 }
 
 .titleJokes {
@@ -31,7 +30,8 @@
   position: absolute;
   background: #587750;
   margin-top: 1.8rem;
-  margin-left: 1%;
+  align-self: center;
+  margin-left: 12px;
 }
 
 .joke {
@@ -45,8 +45,8 @@
   align-items: flex-start;
   justify-content: center;
   text-align: justify;
-  overflow: scroll;
   font-weight: 600;
+  overflow-y: auto;
 }
 
 .btnAnotherJoke {
