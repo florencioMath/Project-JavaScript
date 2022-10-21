@@ -24,7 +24,7 @@
   color: #f7f6f8;
 }
 
-#choices {
+#textarea {
   width: 500px;
   max-width: 90%;
   height: 200px;
@@ -33,9 +33,10 @@
   font-size: 1rem;
   font-weight: 500;
   outline: none;
+  border-radius: 0.4rem;
 }
 
-#choicePicker {
+#btnChoicePicker {
   padding: 1rem;
   border: none;
   border-radius: 0.4rem;
@@ -44,15 +45,34 @@
   font-weight: 500;
 }
 
-#choicePicker:disabled {
+#btnChoicePicker:disabled {
   cursor: not-allowed;
 }
 
-.tags {
+.tagsField {
   color: #f7f6f8;
+  background: darkcyan;
   margin: 1rem;
-  width: 800px;
+  width: 500px;
   max-width: 90%;
   height: 200px;
   padding: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.span {
+  background: lightblue;
+  padding: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  margin: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+  color: black;
+}
+
+.highlight {
+  background: red;
 }
