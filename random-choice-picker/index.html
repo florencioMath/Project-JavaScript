@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <section class="container"><p>Random Choice Picker</p></section>
+    <section class="container">
+      <div class="wrapper">
+        <h3 class="choicesTitle">
+          Enter all of the choices divided by a comma (',')
+        </h3>
+        <textarea
+          name="choices"
+          id="choices"
+          placeholder="Enter choices here..."
+        ></textarea>
+        <button id="choicePicker" disabled>Select random</button>
+        <div class="tags" id="tags">Press enter to see the tags.</div>
+      </div>
+    </section>
 
     <footer class="footer">
       <h2 class="challengeTitle">Random Choice Picker</h2>

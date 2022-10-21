@@ -1,9 +1,58 @@
 .container {
   background: #121212;
   padding: 2rem;
+  display: flex;
 }
 
-p {
-  font-size: 2rem;
-  color: #f1f1f1;
+.wrapper {
+  height: 800px;
+  max-height: 100%;
+  width: 800px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.choicesTitle {
+  margin-top: 1rem;
+  padding: 0px 0.5rem;
+  font-weight: 300;
+  color: #f7f6f8;
+}
+
+#choices {
+  width: 500px;
+  max-width: 90%;
+  height: 200px;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+}
+
+#choicePicker {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#choicePicker:disabled {
+  cursor: not-allowed;
+}
+
+.tags {
+  color: #f7f6f8;
+  margin: 1rem;
+  width: 800px;
+  max-width: 90%;
+  height: 200px;
+  padding: 0.8rem;
 }
