@@ -36,30 +36,44 @@
   border-radius: 0.4rem;
 }
 
-#btnChoicePicker {
+.buttons {
+  padding: 0.5rem;
+}
+
+#btnChoicePicker,
+#btnChoicePickerClear {
   padding: 1rem;
   border: none;
   border-radius: 0.4rem;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0rem 0.5rem;
 }
 
-#btnChoicePicker:disabled {
+#btnChoicePicker:hover,
+#btnChoicePickerClear:hover {
+  border: 1px solid #739c69;
+  transition: all 1s ease;
+  box-shadow: inset 8rem 8rem 8rem 8rem #739c69;
+  cursor: pointer;
+}
+
+#btnChoicePicker:disabled,
+#btnChoicePickerClear:disabled {
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .tagsField {
   color: #f7f6f8;
-  background: darkcyan;
   margin: 1rem;
   width: 500px;
   max-width: 90%;
-  height: 200px;
+  height: 400px;
+  max-height: 100%;
   padding: 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
+  overflow: auto;
   box-sizing: border-box;
 }
 
@@ -71,8 +85,22 @@
   margin: 0.2rem 0.5rem;
   border-radius: 0.4rem;
   color: black;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .highlight {
-  background: red;
+  background: #739c69;
+  color: white;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  background: #32442e;
+  width: 25px;
+  height: 2px;
+  margin-top: 1.2rem;
+  margin-left: -5px;
 }
