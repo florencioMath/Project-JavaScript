@@ -1,9 +1,32 @@
 .container {
   background: #121212;
   padding: 2rem;
+  flex-wrap: wrap;
 }
 
-p {
+.wrapperSocial {
+  background: #f1f1f1;
+  height: 250px;
+  width: 350px;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 0.4rem;
+}
+
+i {
+  color: #121212;
+}
+
+#counter {
+  margin: 2rem;
   font-size: 2rem;
-  color: #f1f1f1;
+  font-weight: 600;
+}
+
+span {
+  font-size: 1rem;
 }
