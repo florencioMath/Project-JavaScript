@@ -1,9 +1,64 @@
 .container {
   background: #121212;
   padding: 2rem;
+  flex-direction: column;
+  justify-content: start;
+  color: #f1f1f1;
 }
 
-p {
-  color: #f1f1f1;
-  font-size: 2rem;
+h3 {
+  margin: 1rem;
+}
+
+.cup {
+  background: #f1f1f1;
+  height: 400px;
+  width: 200px;
+  border-radius: 0px 0px 3rem 3rem;
+  box-sizing: border-box;
+  border: 5px solid blue;
+  margin-bottom: 1rem;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.cup.cupSmall {
+  height: 120px;
+  width: 60px;
+  margin: 0.5rem;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0px 0px 1rem 1rem;
+}
+
+.text {
+  margin: 2rem 1rem;
+}
+
+.cups {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.water {
+  background: lightblue;
+}
+
+.cup.cupSmall.full {
+  background: lightblue;
 }
