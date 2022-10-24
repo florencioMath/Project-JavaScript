@@ -12,11 +12,11 @@ h3 {
 
 .cup {
   background: #f1f1f1;
-  height: 400px;
-  width: 200px;
-  border-radius: 0px 0px 3rem 3rem;
-  box-sizing: border-box;
   border: 5px solid blue;
+  border-radius: 0px 0px 3rem 3rem;
+  height: 350px;
+  width: 250px;
+  box-sizing: border-box;
   margin-bottom: 1rem;
   color: #121212;
   display: flex;
@@ -24,15 +24,6 @@ h3 {
   justify-content: end;
   overflow: hidden;
 }
-
-/* span,
-small {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-weight: 600;
-  background: lightcoral;
-} */
 
 .cup.cupSmall {
   height: 120px;
@@ -53,14 +44,29 @@ small {
   margin: 2rem 1rem;
 }
 
+.remaining {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  transition: 0.3s ease;
+}
+
 .remaining span {
   display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
   font-weight: bold;
 }
 
 .remaining small {
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cups {
@@ -83,19 +89,7 @@ small {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 1.5rem;
   height: 0;
-  transition: 0.3s ease;
-  width: 100%;
-  position: relative;
-}
-
-.remained {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
   transition: 0.3s ease;
 }
