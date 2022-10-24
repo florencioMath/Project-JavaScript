@@ -20,15 +20,19 @@ h3 {
   margin-bottom: 1rem;
   color: #121212;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: end;
+  overflow: hidden;
 }
 
-span {
+/* span,
+small {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   font-weight: 600;
-}
+  background: lightcoral;
+} */
 
 .cup.cupSmall {
   height: 120px;
@@ -49,6 +53,16 @@ span {
   margin: 2rem 1rem;
 }
 
+.remaining span {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.remaining small {
+  font-size: 12px;
+}
+
 .cups {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -61,4 +75,27 @@ span {
 
 .cup.cupSmall.full {
   background: lightblue;
+}
+
+.percentage {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 0;
+  transition: 0.3s ease;
+  width: 100%;
+  position: relative;
+}
+
+.remained {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  transition: 0.3s ease;
 }
