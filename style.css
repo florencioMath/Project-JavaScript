@@ -21,29 +21,21 @@ header {
 .title {
   line-height: 1;
   font-size: 2rem;
-  color: #12100f;
+  color: #f1f1f1;
   position: absolute;
   z-index: 1;
+  margin: 1rem;
 }
 
-.title::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background: #739c69c2;
-  width: 1.8rem;
-  height: 1.5rem;
-  top: 15px;
-  left: -15px;
-  border-radius: 0.2rem;
-  z-index: -1;
+.mainContainer,
+header {
+  background: #121212;
 }
 
 .mainContainer ul {
   top: 5rem;
   min-height: 100vh;
   width: 100vw;
-  background: #f7f6f8;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -151,4 +143,21 @@ header {
   margin-top: 2rem;
   margin-left: -10px;
   border-radius: 0.2rem;
+}
+
+@media (max-width: 740px) {
+  .anchors {
+    width: 160px;
+    height: 100px;
+    margin: 0.8rem;
+  }
+
+  .mainContainer ul {
+    padding: 0px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin: 2rem;
+  }
 }
