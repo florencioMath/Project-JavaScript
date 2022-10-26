@@ -1,8 +1,8 @@
 const API_KEY = "api_key=934ac50f08c8f20204bbaf41bc00f59e";
-const BASE_URL = "http://api.themoviedb.org/3/";
+const BASE_URL = "https://api.themoviedb.org/3/";
 const FINAL_URL =
   BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
-const IMAGES_URL = "http://image.tmdb.org/t/p/original";
+const IMAGES_URL = "https://image.tmdb.org/t/p/original";
 const SEARCH_API = BASE_URL + "search/movie?" + API_KEY + "&query=";
 const timeout = 2000;
 
