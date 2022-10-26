@@ -7,3 +7,65 @@ p {
   color: #f1f1f1;
   font-size: 2rem;
 }
+
+header nav {
+  background: #f1f1f1;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+
+.fa-video {
+  color: #121212;
+  font-size: 2rem;
+}
+
+.containerSearch {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.inputSearch {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 0%;
+  height: 40px;
+  border-radius: 0.2rem 0px 0px 0.2rem;
+  outline: none;
+  background: #121212;
+  color: #f1f1f1;
+  transition: all 0.8s ease;
+}
+
+.inputSearchExpand {
+  width: 100%;
+  transition: width 1s ease;
+  padding: 0.5rem;
+}
+
+.btnSearch {
+  background: #121212;
+  color: #f1f1f1;
+  padding: 0px;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  height: 40px;
+  font-size: 1.4rem;
+  border-radius: 0.2rem;
+}
+
+.btnSearch:hover {
+  transition: all 0.5s ease;
+  background: #3d3d3d;
+}
+
+.btnSearchClick {
+  border-radius: 0px 0.2rem 0.2rem 0px;
+}
