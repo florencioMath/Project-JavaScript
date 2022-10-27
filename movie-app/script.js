@@ -8,7 +8,6 @@ const timeout = 2000;
 
 const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
-// const container = document.getElementById("container");
 
 btnSearch.addEventListener("click", (e) => {
   e.preventDefault(e);
@@ -34,7 +33,7 @@ async function getMovies() {
   const response = await fetch(FINAL_URL);
   const data = await response.json();
   showMovies(data.results);
-  // console.log(data.results);
+  console.log(data.results);
 }
 
 function showMovies(movieInfo) {
@@ -43,13 +42,19 @@ function showMovies(movieInfo) {
 
   movieInfo.forEach((movie) => {
     const div = document.createElement("div");
+    const anchor = document.createElement("a");
     div.classList.add("wrapperMovie");
 
-    div.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
-    console.log(div.style.backgroundImage);
+    anchor.innerHTML = movie.title;
+    anchor.href = "./movie/index.html";
 
-    div.innerText = movie.title;
+    anchor.addEventListener("click", (e) => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+    div.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+
     container.appendChild(div);
+    div.appendChild(anchor);
   });
 }
 
