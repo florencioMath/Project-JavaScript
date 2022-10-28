@@ -82,7 +82,9 @@ header {
   justify-content: center;
   flex-direction: column;
   height: 20vh;
+  width: 100vw;
   background: #0f0f0f;
+  bottom: 0;
 }
 
 .buttonInicio {
