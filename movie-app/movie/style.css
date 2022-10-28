@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  height: 100vh;
 }
 
 .wrapperMovie {
@@ -92,9 +93,16 @@ span {
 }
 
 @media (min-width: 820px) {
-  .container {
-    height: 100%;
+  .wrapperMovie {
+    width: 80vw;
+    padding: 0.5rem 1rem;
   }
+
+  .wrapperInfos {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .wrapperImg {
     height: 500px;
   }
@@ -105,23 +113,30 @@ span {
 
   .paragraph {
     max-width: 820px;
-
+    width: 100%;
     font-size: 1.5rem;
+    padding: 1rem;
   }
 
   .wrapperStats {
     max-width: 820px;
     height: 200px;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .wrapperStatsPopRel {
     max-width: 820px;
-
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: 50%;
+    width: 100%;
   }
 
   .wrapperStatsPopRel span {
@@ -133,6 +148,8 @@ span {
   .wrapperVoteAverage {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
   }
 }

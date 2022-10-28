@@ -11,8 +11,6 @@ const popularity = document.getElementById("popularity");
 const releaseDate = document.getElementById("releaseDate");
 const voteAverage = document.getElementById("voteAverage");
 
-console.log(movie);
-
 document.title = movie.title;
 
 wrapperImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
