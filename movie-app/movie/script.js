@@ -20,6 +20,6 @@ console.log(typeof movie.release_date);
 
 movieTitle.innerText = movie.title;
 paragraph.innerText = movie.overview;
-popularity.innerText = movie.popularity;
+popularity.innerText = Math.round(movie.popularity);
 voteAverage.innerText = movie.vote_average;
 releaseDate.innerText = movie.release_date;
