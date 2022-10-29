@@ -6,8 +6,15 @@ const IMAGES_URL = "https://image.tmdb.org/t/p/original";
 const SEARCH_API = BASE_URL + "search/movie?" + API_KEY + "&query=";
 const timeout = 2000;
 
+const requests = {
+  fetchPopular: `${BASE_URL}discover/movie?certification_country=BR&certification.lte=G&sort_by=popularity.desc&${API_KEY}`,
+};
+
 const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
+
+const containerMovie = document.getElementById("containerMovie");
+containerMovie.classList.add("containerMovieTrending");
 
 btnSearch.addEventListener("click", (e) => {
   e.preventDefault(e);
@@ -32,31 +39,40 @@ inputSearch.addEventListener("keyup", ({ target }) => {
 async function getMovies() {
   const response = await fetch(FINAL_URL);
   const data = await response.json();
-  showMovies(data.results);
-  console.log(data.results);
 }
 
-function showMovies(movieInfo) {
-  const container = document.getElementById("container");
-  console.log(movieInfo);
+async function getMoviesTrending() {
+  const response = await fetch(requests.fetchPopular);
+  const data = await response.json();
+  const trendingMovies = data.results;
 
-  movieInfo.forEach((movie) => {
-    const div = document.createElement("div");
-    const anchor = document.createElement("a");
-    div.classList.add("wrapperMovie");
+  const genreTitle = document.getElementById("genreTitle");
+  genreTitle.innerHTML = "Trending Moveis";
 
-    anchor.innerHTML = movie.title;
-    anchor.href = "./movie/index.html";
+  const row = document.getElementById("row");
+  row.classList.add("row");
 
-    anchor.addEventListener("click", (e) => {
+  trendingMovies.forEach((movie) => {
+    const movieImg = document.createElement("div");
+    movieImg.classList.add("movieImg");
+    const a = document.createElement("a");
+    a.classList.add("movieName");
+
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    a.innerHTML = movie.title;
+
+    a.href = "./movie/index.html";
+
+    a.addEventListener("click", (e) => {
       window.localStorage.setItem("movie", JSON.stringify(movie));
     });
-    div.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
-
-    container.appendChild(div);
-    div.appendChild(anchor);
+    console.log(a);
+    row.appendChild(movieImg);
+    movieImg.appendChild(a);
   });
 }
+
+getMoviesTrending();
 
 getMovies();
 

@@ -6,7 +6,7 @@
   justify-content: start;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 100%;
+  height: 100vh;
 }
 
 p {
@@ -78,15 +78,53 @@ header nav {
   border-radius: 0px 0.2rem 0.2rem 0px;
 }
 
-.wrapperMovie {
-  width: 150px;
-  height: 200px;
+/* .topMovies {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: lightcoral;
+} */
+
+.containerMovie {
+  background: lightblue;
+  height: 350px;
+}
+
+.containerMovieTrending {
+  background: #f1f1f1;
+  height: 350px;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.movieImg {
+  width: 200px;
+  height: 250px;
   padding: 0.5rem;
   border-radius: 0.2rem;
   margin: 0.5rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.movieName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #121212;
+  top: 105%;
+  font-size: 0.875rem;
   font-weight: 700;
+  text-align: center;
 }
