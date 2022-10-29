@@ -8,11 +8,13 @@ const timeout = 2000;
 
 const requests = {
   fetchPopular: `${BASE_URL}discover/movie?certification_country=BR&certification.lte=G&sort_by=popularity.desc&${API_KEY}`,
+  fetchHorrorMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=27`,
 };
 
 const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
 
+const container = document.getElementById("container");
 const containerMovie = document.getElementById("containerMovie");
 containerMovie.classList.add("containerMovieTrending");
 
@@ -44,7 +46,7 @@ async function getMovies() {
 async function getMoviesTrending() {
   const response = await fetch(requests.fetchPopular);
   const data = await response.json();
-  const trendingMovies = data.results;
+  const trendingMovies = await data.results;
 
   const genreTitle = document.getElementById("genreTitle");
   genreTitle.innerHTML = "Trending Moveis";
@@ -66,11 +68,50 @@ async function getMoviesTrending() {
     a.addEventListener("click", (e) => {
       window.localStorage.setItem("movie", JSON.stringify(movie));
     });
-    console.log(a);
+
     row.appendChild(movieImg);
     movieImg.appendChild(a);
   });
 }
+
+async function getMoviesHorror() {
+  const response = await fetch(requests.fetchHorrorMovies);
+  const data = await response.json();
+  const horrorMovies = await data.results;
+
+  const containerMovie = document.createElement("div");
+  containerMovie.classList.add("containerMovie");
+
+  const genreTitle = document.createElement("h2");
+  genreTitle.classList.add("genreTitle");
+  genreTitle.innerHTML = "Horror Moveis";
+
+  const row = document.createElement("div");
+  row.classList.add("row");
+
+  horrorMovies.forEach((movie) => {
+    const movieImg = document.createElement("div");
+    movieImg.classList.add("movieImg");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+
+    const a = document.createElement("a");
+    a.classList.add("movieName");
+    a.innerHTML = movie.title;
+    a.href = "./movie/index.html";
+    a.addEventListener("click", (e) => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    row.appendChild(movieImg);
+    movieImg.appendChild(a);
+  });
+
+  container.appendChild(containerMovie);
+  containerMovie.appendChild(genreTitle);
+  containerMovie.appendChild(row);
+}
+
+getMoviesHorror();
 
 getMoviesTrending();
 

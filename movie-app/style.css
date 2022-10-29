@@ -6,7 +6,8 @@
   justify-content: start;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 p {
@@ -78,36 +79,28 @@ header nav {
   border-radius: 0px 0.2rem 0.2rem 0px;
 }
 
-/* .topMovies {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  background: lightcoral;
-} */
-
 .containerMovie {
-  background: lightblue;
-  height: 350px;
-}
-
-.containerMovieTrending {
   background: #f1f1f1;
-  height: 350px;
+  height: 400px;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
 }
 
 .row {
-  height: 100%;
+  height: 350px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.genreTitle {
   padding: 1rem;
 }
 
 .movieImg {
   width: 200px;
-  height: 250px;
+  height: 300px;
   padding: 0.5rem;
   border-radius: 0.2rem;
   margin: 0.5rem;
