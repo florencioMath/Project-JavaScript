@@ -109,6 +109,14 @@ header nav {
   margin-bottom: 2rem;
 }
 
+.movieImgHorizontal {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
 .movieName {
   height: fit-content;
   display: flex;

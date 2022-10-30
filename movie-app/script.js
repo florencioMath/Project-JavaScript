@@ -79,7 +79,6 @@ async function getMoviesTrending() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
-  console.log(data);
 }
 
 async function getMoviesHorror() {
@@ -100,7 +99,8 @@ async function getMoviesHorror() {
   horrorMovies.forEach((movie) => {
     const movieImg = document.createElement("div");
     movieImg.classList.add("movieImg");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    movieImg.classList.add("movieImgHorizontal");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
 
     const a = document.createElement("a");
     a.classList.add("movieName");
@@ -117,7 +117,6 @@ async function getMoviesHorror() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
-  console.log(data);
 }
 
 async function getMoviesComedy() {
@@ -138,7 +137,8 @@ async function getMoviesComedy() {
   comedyMovies.forEach((movie) => {
     const movieImg = document.createElement("div");
     movieImg.classList.add("movieImg");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    movieImg.classList.add("movieImgHorizontal");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
 
     const a = document.createElement("a");
     a.classList.add("movieName");
@@ -155,7 +155,6 @@ async function getMoviesComedy() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
-  console.log(data);
 }
 
 async function getMoviesAction() {
@@ -176,7 +175,8 @@ async function getMoviesAction() {
   actionMovies.forEach((movie) => {
     const movieImg = document.createElement("div");
     movieImg.classList.add("movieImg");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    movieImg.classList.add("movieImgHorizontal");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
 
     const a = document.createElement("a");
     a.classList.add("movieName");
@@ -193,7 +193,6 @@ async function getMoviesAction() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
-  console.log(data);
 }
 
 async function getMoviesDocumentaries() {
@@ -214,7 +213,8 @@ async function getMoviesDocumentaries() {
   documentariesMovies.forEach((movie) => {
     const movieImg = document.createElement("div");
     movieImg.classList.add("movieImg");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    movieImg.classList.add("movieImgHorizontal");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
 
     const a = document.createElement("a");
     a.classList.add("movieName");
@@ -231,8 +231,6 @@ async function getMoviesDocumentaries() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
-
-  console.log(data);
 }
 
 getMoviesTrending();
@@ -250,7 +248,6 @@ getMovies();
 async function getMoviesSearch(movie) {
   const response = await fetch(SEARCH_API + movie);
   const data = await response.json();
-  console.log(data);
 }
 
 // getMoviesSearch("Halloween");
