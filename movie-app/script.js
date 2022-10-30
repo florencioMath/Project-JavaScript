@@ -9,6 +9,9 @@ const timeout = 2000;
 const requests = {
   fetchPopular: `${BASE_URL}discover/movie?certification_country=BR&certification.lte=G&sort_by=popularity.desc&${API_KEY}`,
   fetchHorrorMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=27`,
+  fetchComedyMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=35`,
+  fetchActionMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=28`,
+  fetchDocumentaries: `${BASE_URL}discover/movie?${API_KEY}&with_genres=27`,
 };
 
 const btnSearch = document.getElementById("btnSearch");
@@ -76,6 +79,7 @@ async function getMoviesTrending() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
+  console.log(data);
 }
 
 async function getMoviesHorror() {
@@ -113,11 +117,133 @@ async function getMoviesHorror() {
   container.appendChild(containerMovie);
   containerMovie.appendChild(genreTitle);
   containerMovie.appendChild(row);
+  console.log(data);
+}
+
+async function getMoviesComedy() {
+  const response = await fetch(requests.fetchComedyMovies);
+  const data = await response.json();
+  const comedyMovies = await data.results;
+
+  const containerMovie = document.createElement("div");
+  containerMovie.classList.add("containerMovie");
+
+  const genreTitle = document.createElement("h2");
+  genreTitle.classList.add("genreTitle");
+  genreTitle.innerHTML = "Comedy Moveis";
+
+  const row = document.createElement("div");
+  row.classList.add("row");
+
+  comedyMovies.forEach((movie) => {
+    const movieImg = document.createElement("div");
+    movieImg.classList.add("movieImg");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+
+    const a = document.createElement("a");
+    a.classList.add("movieName");
+    a.innerHTML = movie.title;
+    a.href = "./movie/index.html";
+    a.addEventListener("click", (e) => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    row.appendChild(movieImg);
+    movieImg.appendChild(a);
+  });
+
+  container.appendChild(containerMovie);
+  containerMovie.appendChild(genreTitle);
+  containerMovie.appendChild(row);
+  console.log(data);
+}
+
+async function getMoviesAction() {
+  const response = await fetch(requests.fetchActionMovies);
+  const data = await response.json();
+  const actionMovies = await data.results;
+
+  const containerMovie = document.createElement("div");
+  containerMovie.classList.add("containerMovie");
+
+  const genreTitle = document.createElement("h2");
+  genreTitle.classList.add("genreTitle");
+  genreTitle.innerHTML = "Action Moveis";
+
+  const row = document.createElement("div");
+  row.classList.add("row");
+
+  actionMovies.forEach((movie) => {
+    const movieImg = document.createElement("div");
+    movieImg.classList.add("movieImg");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+
+    const a = document.createElement("a");
+    a.classList.add("movieName");
+    a.innerHTML = movie.title;
+    a.href = "./movie/index.html";
+    a.addEventListener("click", (e) => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    row.appendChild(movieImg);
+    movieImg.appendChild(a);
+  });
+
+  container.appendChild(containerMovie);
+  containerMovie.appendChild(genreTitle);
+  containerMovie.appendChild(row);
+  console.log(data);
+}
+
+async function getMoviesDocumentaries() {
+  const response = await fetch(requests.fetchDocumentaries);
+  const data = await response.json();
+  const documentariesMovies = await data.results;
+
+  const containerMovie = document.createElement("div");
+  containerMovie.classList.add("containerMovie");
+
+  const genreTitle = document.createElement("h2");
+  genreTitle.classList.add("genreTitle");
+  genreTitle.innerHTML = "Documentaries Moveis";
+
+  const row = document.createElement("div");
+  row.classList.add("row");
+
+  documentariesMovies.forEach((movie) => {
+    const movieImg = document.createElement("div");
+    movieImg.classList.add("movieImg");
+    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+
+    const a = document.createElement("a");
+    a.classList.add("movieName");
+    a.innerHTML = movie.title;
+    a.href = "./movie/index.html";
+    a.addEventListener("click", (e) => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    row.appendChild(movieImg);
+    movieImg.appendChild(a);
+  });
+
+  container.appendChild(containerMovie);
+  containerMovie.appendChild(genreTitle);
+  containerMovie.appendChild(row);
+
+  console.log(data);
 }
 
 getMoviesTrending();
 
 getMoviesHorror();
+
+getMoviesComedy();
+
+getMoviesAction();
+
+getMoviesDocumentaries();
 
 getMovies();
 
