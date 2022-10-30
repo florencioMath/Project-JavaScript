@@ -81,17 +81,16 @@ header nav {
 
 .containerMovie {
   background: #f1f1f1;
-  height: 400px;
+  height: fit-content;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
 }
 
 .row {
-  height: 350px;
+  height: 100%;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  padding: 0px 0px 1rem 0px;
 }
 
 .genreTitle {
@@ -111,6 +110,7 @@ header nav {
 }
 
 .movieName {
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
