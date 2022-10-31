@@ -257,13 +257,19 @@ async function getMoviesSearch(movie) {
   const data = await response.json();
   const findedMovies = data.results;
 
+  if (findedMovies.length > 0) containerResultSearch.style.display = "flex";
+  else containerResultSearch.style.display = "none";
   findedMovies.forEach((movie) => {
-    if (findedMovies.length > 0) containerResultSearch.style.display = "flex";
-    else containerResultSearch.style.display = "none";
-    const li = document.createElement("li");
-    li.innerText = movie.title;
+    const a = document.createElement("a");
+    a.classList.add("movieSearchAnchor");
+    a.innerText = movie.title;
 
-    containerResultSearch.appendChild(li);
+    a.href = "./movie/index.html";
+    a.addEventListener("click", () => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    containerResultSearch.appendChild(a);
   });
 }
 

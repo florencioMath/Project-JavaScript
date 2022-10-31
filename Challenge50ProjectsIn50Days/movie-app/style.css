@@ -55,6 +55,26 @@ header nav {
   overflow-x: scroll;
 }
 
+.movieSearchAnchor {
+  color: #121212;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.movieSearchAnchor::before {
+  content: "";
+  background: #333333;
+  height: 2px;
+  width: 90%;
+  border-radius: 0.5rem;
+  position: absolute;
+  margin-top: 10%;
+}
+
+.movieSearchAnchor:hover {
+  font-weight: 700;
+}
+
 .inputSearch {
   border: none;
   margin: 0px;
