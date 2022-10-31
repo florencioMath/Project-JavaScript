@@ -53,36 +53,7 @@ async function getMoviesTrending() {
   const data = await response.json();
   const trendingMovies = await data.results;
 
-  const containerMovie = document.createElement("div");
-  containerMovie.classList.add("containerMovie");
-
-  const genreTitle = document.createElement("h2");
-  genreTitle.classList.add("genreTitle");
-  genreTitle.innerHTML = "Trending Moveis";
-
-  const row = document.createElement("div");
-  row.classList.add("row");
-
-  trendingMovies.forEach((movie) => {
-    const movieImg = document.createElement("div");
-    movieImg.classList.add("movieImg");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
-
-    const a = document.createElement("a");
-    a.classList.add("movieName");
-    a.innerHTML = movie.title;
-    a.href = "./movie/index.html";
-    a.addEventListener("click", (e) => {
-      window.localStorage.setItem("movie", JSON.stringify(movie));
-    });
-
-    row.appendChild(movieImg);
-    movieImg.appendChild(a);
-  });
-
-  container.appendChild(containerMovie);
-  containerMovie.appendChild(genreTitle);
-  containerMovie.appendChild(row);
+  createMovie(trendingMovies, "Trending");
 }
 
 async function getMoviesHorror() {
@@ -90,37 +61,7 @@ async function getMoviesHorror() {
   const data = await response.json();
   const horrorMovies = await data.results;
 
-  const containerMovie = document.createElement("div");
-  containerMovie.classList.add("containerMovie");
-
-  const genreTitle = document.createElement("h2");
-  genreTitle.classList.add("genreTitle");
-  genreTitle.innerHTML = "Horror Moveis";
-
-  const row = document.createElement("div");
-  row.classList.add("row");
-
-  horrorMovies.forEach((movie) => {
-    const movieImg = document.createElement("div");
-    movieImg.classList.add("movieImg");
-    movieImg.classList.add("movieImgHorizontal");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
-
-    const a = document.createElement("a");
-    a.classList.add("movieName");
-    a.innerHTML = movie.title;
-    a.href = "./movie/index.html";
-    a.addEventListener("click", (e) => {
-      window.localStorage.setItem("movie", JSON.stringify(movie));
-    });
-
-    row.appendChild(movieImg);
-    movieImg.appendChild(a);
-  });
-
-  container.appendChild(containerMovie);
-  containerMovie.appendChild(genreTitle);
-  containerMovie.appendChild(row);
+  createMovie(horrorMovies, "Horror");
 }
 
 async function getMoviesComedy() {
@@ -128,37 +69,7 @@ async function getMoviesComedy() {
   const data = await response.json();
   const comedyMovies = await data.results;
 
-  const containerMovie = document.createElement("div");
-  containerMovie.classList.add("containerMovie");
-
-  const genreTitle = document.createElement("h2");
-  genreTitle.classList.add("genreTitle");
-  genreTitle.innerHTML = "Comedy Moveis";
-
-  const row = document.createElement("div");
-  row.classList.add("row");
-
-  comedyMovies.forEach((movie) => {
-    const movieImg = document.createElement("div");
-    movieImg.classList.add("movieImg");
-    movieImg.classList.add("movieImgHorizontal");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
-
-    const a = document.createElement("a");
-    a.classList.add("movieName");
-    a.innerHTML = movie.title;
-    a.href = "./movie/index.html";
-    a.addEventListener("click", (e) => {
-      window.localStorage.setItem("movie", JSON.stringify(movie));
-    });
-
-    row.appendChild(movieImg);
-    movieImg.appendChild(a);
-  });
-
-  container.appendChild(containerMovie);
-  containerMovie.appendChild(genreTitle);
-  containerMovie.appendChild(row);
+  createMovie(comedyMovies, "Comedy");
 }
 
 async function getMoviesAction() {
@@ -166,37 +77,7 @@ async function getMoviesAction() {
   const data = await response.json();
   const actionMovies = await data.results;
 
-  const containerMovie = document.createElement("div");
-  containerMovie.classList.add("containerMovie");
-
-  const genreTitle = document.createElement("h2");
-  genreTitle.classList.add("genreTitle");
-  genreTitle.innerHTML = "Action Moveis";
-
-  const row = document.createElement("div");
-  row.classList.add("row");
-
-  actionMovies.forEach((movie) => {
-    const movieImg = document.createElement("div");
-    movieImg.classList.add("movieImg");
-    movieImg.classList.add("movieImgHorizontal");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
-
-    const a = document.createElement("a");
-    a.classList.add("movieName");
-    a.innerHTML = movie.title;
-    a.href = "./movie/index.html";
-    a.addEventListener("click", (e) => {
-      window.localStorage.setItem("movie", JSON.stringify(movie));
-    });
-
-    row.appendChild(movieImg);
-    movieImg.appendChild(a);
-  });
-
-  container.appendChild(containerMovie);
-  containerMovie.appendChild(genreTitle);
-  containerMovie.appendChild(row);
+  createMovie(actionMovies, "Action");
 }
 
 async function getMoviesDocumentaries() {
@@ -204,21 +85,30 @@ async function getMoviesDocumentaries() {
   const data = await response.json();
   const documentariesMovies = await data.results;
 
+  createMovie(documentariesMovies, "Documentaries");
+}
+
+function createMovie(movieList, movieType) {
   const containerMovie = document.createElement("div");
   containerMovie.classList.add("containerMovie");
 
   const genreTitle = document.createElement("h2");
   genreTitle.classList.add("genreTitle");
-  genreTitle.innerHTML = "Documentaries Moveis";
+  genreTitle.innerHTML = movieType;
 
   const row = document.createElement("div");
   row.classList.add("row");
 
-  documentariesMovies.forEach((movie) => {
+  movieList.forEach((movie) => {
     const movieImg = document.createElement("div");
     movieImg.classList.add("movieImg");
-    movieImg.classList.add("movieImgHorizontal");
-    movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
+
+    if (movieType != "Trending") {
+      movieImg.classList.add("movieImgHorizontal");
+      movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
+    } else {
+      movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+    }
 
     const a = document.createElement("a");
     a.classList.add("movieName");
@@ -247,6 +137,7 @@ const interval = setInterval(() => {
   getMoviesAction();
 
   getMoviesDocumentaries();
+
   clearInterval(interval);
 }, 1000);
 
