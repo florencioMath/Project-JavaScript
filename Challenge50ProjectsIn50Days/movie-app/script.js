@@ -18,6 +18,7 @@ const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
 
 const container = document.getElementById("container");
+const containerResultSearch = document.getElementById("containerResultSearch");
 
 btnSearch.addEventListener("click", (e) => {
   e.preventDefault(e);
@@ -25,6 +26,7 @@ btnSearch.addEventListener("click", (e) => {
   if (inputSearch.classList.contains("inputSearchExpand")) {
     inputSearch.classList.remove("inputSearchExpand");
     btnSearch.classList.remove("btnSearchClick");
+    containerResultSearch.style.display = "none";
   } else {
     inputSearch.classList.add("inputSearchExpand");
     btnSearch.classList.add("btnSearchClick");
@@ -36,7 +38,9 @@ inputSearch.addEventListener("keyup", ({ target }) => {
   const movieToSearch = target.value;
   if (movieToSearch.length > 0) {
     getMoviesSearch(movieToSearch);
+    containerResultSearch.style.display = "flex";
   }
+  containerResultSearch.style.display = "none";
 });
 
 async function getMovies() {
@@ -235,19 +239,32 @@ async function getMoviesDocumentaries() {
 
 getMoviesTrending();
 
-getMoviesHorror();
+const interval = setInterval(() => {
+  getMoviesHorror();
 
-getMoviesComedy();
+  getMoviesComedy();
 
-getMoviesAction();
+  getMoviesAction();
 
-getMoviesDocumentaries();
+  getMoviesDocumentaries();
+  clearInterval(interval);
+}, 1000);
 
 getMovies();
 
 async function getMoviesSearch(movie) {
   const response = await fetch(SEARCH_API + movie);
   const data = await response.json();
+  const findedMovies = data.results;
+
+  findedMovies.forEach((movie) => {
+    if (findedMovies.length > 0) containerResultSearch.style.display = "flex";
+    else containerResultSearch.style.display = "none";
+    const li = document.createElement("li");
+    li.innerText = movie.title;
+
+    containerResultSearch.appendChild(li);
+  });
 }
 
 // getMoviesSearch("Halloween");

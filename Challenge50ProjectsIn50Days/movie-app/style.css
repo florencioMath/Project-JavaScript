@@ -38,6 +38,23 @@ header nav {
   justify-content: flex-end;
 }
 
+.containerResultSearch {
+  height: 150px;
+  width: 210px;
+  display: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: #121212;
+  background: #f1f1f1;
+  border-radius: 0px 0px.4rem 0.4rem;
+  position: absolute;
+  padding: 0.5rem;
+  right: 55px;
+  top: 55px;
+  overflow-x: scroll;
+}
+
 .inputSearch {
   border: none;
   margin: 0px;
