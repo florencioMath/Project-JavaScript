@@ -5,29 +5,6 @@ const inputSearch = document.getElementById("inputSearch");
 const container = document.getElementById("container");
 const containerResultSearch = document.getElementById("containerResultSearch");
 
-btnSearch.addEventListener("click", (e) => {
-  e.preventDefault(e);
-
-  if (inputSearch.classList.contains("inputSearchExpand")) {
-    inputSearch.classList.remove("inputSearchExpand");
-    btnSearch.classList.remove("btnSearchClick");
-    containerResultSearch.style.display = "none";
-  } else {
-    inputSearch.classList.add("inputSearchExpand");
-    btnSearch.classList.add("btnSearchClick");
-    inputSearch.focus();
-  }
-});
-
-inputSearch.addEventListener("keyup", ({ target }) => {
-  const movieToSearch = target.value;
-  if (movieToSearch.length > 0) {
-    getMoviesSearch(movieToSearch);
-    containerResultSearch.style.display = "flex";
-  }
-  containerResultSearch.style.display = "none";
-});
-
 async function getMoviesTrending() {
   const response = await fetch(API.requests.fetchPopular);
   const data = await response.json();
@@ -120,6 +97,29 @@ const interval = setInterval(() => {
 
   clearInterval(interval);
 }, 1000);
+
+btnSearch.addEventListener("click", (e) => {
+  e.preventDefault(e);
+
+  if (inputSearch.classList.contains("inputSearchExpand")) {
+    inputSearch.classList.remove("inputSearchExpand");
+    btnSearch.classList.remove("btnSearchClick");
+    containerResultSearch.style.display = "none";
+  } else {
+    inputSearch.classList.add("inputSearchExpand");
+    btnSearch.classList.add("btnSearchClick");
+    inputSearch.focus();
+  }
+});
+
+inputSearch.addEventListener("keyup", ({ target }) => {
+  const movieToSearch = target.value;
+  if (movieToSearch.length > 0) {
+    getMoviesSearch(movieToSearch);
+    containerResultSearch.style.display = "flex";
+  }
+  containerResultSearch.style.display = "none";
+});
 
 async function getMoviesSearch(movie) {
   const response = await fetch(API.SEARCH_API + movie);
