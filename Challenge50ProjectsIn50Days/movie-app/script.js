@@ -1,22 +1,7 @@
-const API_KEY = "api_key=934ac50f08c8f20204bbaf41bc00f59e";
-const BASE_URL = "https://api.themoviedb.org/3/";
-const FINAL_URL =
-  BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
-const IMAGES_URL = "https://image.tmdb.org/t/p/original";
-const SEARCH_API = BASE_URL + "search/movie?" + API_KEY + "&query=";
-const timeout = 2000;
-
-const requests = {
-  fetchPopular: `${BASE_URL}discover/movie?certification_country=BR&certification.lte=G&sort_by=popularity.desc&${API_KEY}`,
-  fetchHorrorMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=27`,
-  fetchComedyMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=35`,
-  fetchActionMovies: `${BASE_URL}discover/movie?${API_KEY}&with_genres=28`,
-  fetchDocumentaries: `${BASE_URL}discover/movie?${API_KEY}&with_genres=27`,
-};
+import API from "./api.js";
 
 const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
-
 const container = document.getElementById("container");
 const containerResultSearch = document.getElementById("containerResultSearch");
 
@@ -43,13 +28,8 @@ inputSearch.addEventListener("keyup", ({ target }) => {
   containerResultSearch.style.display = "none";
 });
 
-async function getMovies() {
-  const response = await fetch(FINAL_URL);
-  const data = await response.json();
-}
-
 async function getMoviesTrending() {
-  const response = await fetch(requests.fetchPopular);
+  const response = await fetch(API.requests.fetchPopular);
   const data = await response.json();
   const trendingMovies = await data.results;
 
@@ -57,7 +37,7 @@ async function getMoviesTrending() {
 }
 
 async function getMoviesHorror() {
-  const response = await fetch(requests.fetchHorrorMovies);
+  const response = await fetch(API.requests.fetchHorrorMovies);
   const data = await response.json();
   const horrorMovies = await data.results;
 
@@ -65,7 +45,7 @@ async function getMoviesHorror() {
 }
 
 async function getMoviesComedy() {
-  const response = await fetch(requests.fetchComedyMovies);
+  const response = await fetch(API.requests.fetchComedyMovies);
   const data = await response.json();
   const comedyMovies = await data.results;
 
@@ -73,7 +53,7 @@ async function getMoviesComedy() {
 }
 
 async function getMoviesAction() {
-  const response = await fetch(requests.fetchActionMovies);
+  const response = await fetch(API.requests.fetchActionMovies);
   const data = await response.json();
   const actionMovies = await data.results;
 
@@ -81,7 +61,7 @@ async function getMoviesAction() {
 }
 
 async function getMoviesDocumentaries() {
-  const response = await fetch(requests.fetchDocumentaries);
+  const response = await fetch(API.requests.fetchDocumentaries);
   const data = await response.json();
   const documentariesMovies = await data.results;
 
@@ -105,9 +85,9 @@ function createMovie(movieList, movieType) {
 
     if (movieType != "Trending") {
       movieImg.classList.add("movieImgHorizontal");
-      movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
+      movieImg.style.backgroundImage = `url("${API.IMAGES_URL}${movie.backdrop_path}")`;
     } else {
-      movieImg.style.backgroundImage = `url("${IMAGES_URL}${movie.poster_path}")`;
+      movieImg.style.backgroundImage = `url("${API.IMAGES_URL}${movie.poster_path}")`;
     }
 
     const a = document.createElement("a");
@@ -141,10 +121,8 @@ const interval = setInterval(() => {
   clearInterval(interval);
 }, 1000);
 
-getMovies();
-
 async function getMoviesSearch(movie) {
-  const response = await fetch(SEARCH_API + movie);
+  const response = await fetch(API.SEARCH_API + movie);
   const data = await response.json();
   const findedMovies = data.results;
 
@@ -163,5 +141,3 @@ async function getMoviesSearch(movie) {
     containerResultSearch.appendChild(a);
   });
 }
-
-// getMoviesSearch("Halloween");
