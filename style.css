@@ -1,3 +1,12 @@
+:root {
+  --c-background: #0f0f0f;
+  --c-background-card: #110c0b;
+  --c-background-button: #183425;
+  --c-tittle-main: #d9d3da;
+  --c-paragraph: #737474;
+  --c-icon-text: #121212;
+}
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -5,7 +14,6 @@
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   list-style: none;
-  background: #121212;
 }
 
 header {
@@ -15,12 +23,13 @@ header {
   justify-content: center;
   position: relative;
   height: 5rem;
+  background: var(--c-background);
 }
 
 .title {
   line-height: 1;
   font-size: 2rem;
-  color: #f1f1f1;
+  color: var(--c-tittle-main);
   position: absolute;
   z-index: 1;
   margin: 1rem;
@@ -29,30 +38,76 @@ header {
 .containerHome {
   height: 100vh;
   width: 100%;
-  color: #f1f1f1;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   padding: 1rem;
+  background: var(--c-background);
 }
 
-.challengeWrapper {
-  border: 2px solid white;
-  border-radius: 0.4rem;
-  background: lightcyan;
-  width: 450px;
+.wrapperChallenge {
   height: 500px;
+  width: 400px;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  background: var(--c-background-card);
   display: flex;
-  align-items: center;
-  margin: 0.8rem;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.challengeWrapper a {
-  color: black;
-  height: 100%;
-  width: 100%;
+.wrapperinfo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+}
+
+.wrapperinfo h2 {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c-tittle-main);
+}
+
+.wrapperinfo h2::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 400px;
+  background: #383838fd;
+  margin-top: 40px;
+  margin-left: -120px;
+}
+
+.wrapperinfo p {
+  margin-bottom: 2rem;
+  color: var(--c-paragraph);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.wrapperLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapperLink a {
+  height: 50px;
+  width: 150px;
+  background: var(--c-background-button);
+  border-radius: 0.2rem;
+  color: var(--c-icon-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.wrapperLink a:hover {
+  font-size: 1.8rem;
 }
