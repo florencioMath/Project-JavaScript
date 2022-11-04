@@ -7,6 +7,12 @@
     #f1f1f1 100%
   );
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 p {
@@ -20,8 +26,6 @@ nav {
   width: 80px;
   padding: 1rem;
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 58px,
     rgba(0, 0, 0, 0.22) 0px 10px 22px;
   transition: width 1s linear;

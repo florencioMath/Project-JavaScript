@@ -1,5 +1,12 @@
 .container {
   flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .progress-container {
