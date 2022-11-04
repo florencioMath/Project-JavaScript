@@ -19,7 +19,7 @@
 /* Header */
 header {
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +32,7 @@ header {
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  margin: 1rem;
 }
 
 /* Body */
@@ -138,7 +139,6 @@ header {
   justify-content: center;
   flex-direction: column;
   height: 20vh;
-  width: 100vw;
   background: var(--c-background);
   bottom: 0;
 }
