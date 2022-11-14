@@ -1,0 +1,49 @@
+.wrapperSearch {
+  max-height: 40vh;
+  height: 100%;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.wrapperInput {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperInput input {
+  background: whitesmoke;
+  width: 100%;
+  border: none;
+  height: 1.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  border-radius: 0.2rem 0px 0px 0.2rem;
+}
+
+.wrapperInput input:focus {
+  outline: none;
+}
+
+.wrapperInput i {
+  background: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 0px 0.2rem 0.2rem 0px;
+}
+
+.searchResult {
+  background: lightgoldenrodyellow;
+  padding: 0.5rem;
+  width: 100%;
+}
