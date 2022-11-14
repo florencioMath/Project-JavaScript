@@ -7,7 +7,6 @@ async function searchMovie(movie) {
   const response = await fetch(apiMovie.SEARCH_API + movie);
   const data = await response.json();
   const movieResult = await data.results;
-
   moviesArray = movieResult?.map((movie) => (moviesArray = movie.title));
   return moviesArray;
 }
@@ -17,19 +16,22 @@ async function searchMovie(movie) {
 inputSearch.addEventListener("keyup", filterMovies);
 
 async function filterMovies(e) {
-  const result = await searchMovie(e.target.value);
-  searchResultList.innerHTML = "";
-  // console.log("e.target.value", e.target.value);
+  if (e.keyCode != 8) {
+    const result = await searchMovie(e.target.value);
+    searchResultList.innerHTML = "";
+    // console.log("e.target.value", e.target.value);
 
-  const filtered = result?.filter((movie) => {
-    const movieNormalized = movie.toLowerCase();
-    const searchNormalized = e.target.value.toLowerCase();
-    return movieNormalized.includes(searchNormalized);
-  });
-  // console.log("filtered: ", filtered);
+    const filtered = result?.filter((movie) => {
+      const movieNormalized = movie.toLowerCase();
+      const searchNormalized = e.target.value.toLowerCase();
+      return movieNormalized.includes(searchNormalized);
+    });
+    // console.log("filtered: ", filtered);
 
-  creatList(filtered);
-  if (e.target.value <= 0) searchResultList.innerHTML = "";
+    creatList(filtered);
+  }
+  if (e.target.value <= 0)
+    searchResultList.innerHTML = `<li>Movies will be show here</li>`;
 }
 
 function creatList(movies) {
