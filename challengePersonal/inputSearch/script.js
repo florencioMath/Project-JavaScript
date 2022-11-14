@@ -11,25 +11,21 @@ async function searchMovie(movie) {
   return moviesArray;
 }
 
-// console.log("result: ", result);
-
 inputSearch.addEventListener("keyup", filterMovies);
 
 async function filterMovies(e) {
-  if (e.keyCode != 8) {
+  if (e.target.value.length != 0) {
     const result = await searchMovie(e.target.value);
     searchResultList.innerHTML = "";
-    // console.log("e.target.value", e.target.value);
 
     const filtered = result?.filter((movie) => {
       const movieNormalized = movie.toLowerCase();
       const searchNormalized = e.target.value.toLowerCase();
       return movieNormalized.includes(searchNormalized);
     });
-    // console.log("filtered: ", filtered);
-
     creatList(filtered);
   }
+
   if (e.target.value <= 0)
     searchResultList.innerHTML = `<li>Movies will be show here</li>`;
 }
@@ -40,5 +36,4 @@ function creatList(movies) {
     li.innerHTML = movie;
     searchResultList.appendChild(li);
   });
-  // console.log(searchResultList);
 }
