@@ -19,9 +19,9 @@ async function filterMovies(e) {
   if (e.target.value.length != 0) {
     searchResult.classList.add("active");
     inputSearch.classList.add("active");
+    searchResultList.innerHTML = "";
     icon.classList.add("active");
     const result = await searchMovie(e.target.value);
-    searchResultList.innerHTML = "";
 
     const filtered = result?.filter((movie) => {
       const movieNormalized = movie.toLowerCase();
