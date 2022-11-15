@@ -1,6 +1,8 @@
 import apiMovie from "./api/apiMovie.js";
 const inputSearch = document.getElementById("search");
+const searchResult = document.getElementById("searchResult");
 const searchResultList = document.getElementById("searchResultList");
+const icon = document.getElementById("icon");
 
 async function searchMovie(movie) {
   let moviesArray = [];
@@ -15,6 +17,9 @@ inputSearch.addEventListener("keyup", filterMovies);
 
 async function filterMovies(e) {
   if (e.target.value.length != 0) {
+    searchResult.classList.add("active");
+    inputSearch.classList.add("active");
+    icon.classList.add("active");
     const result = await searchMovie(e.target.value);
     searchResultList.innerHTML = "";
 
@@ -26,13 +31,17 @@ async function filterMovies(e) {
     creatList(filtered);
   }
 
-  if (e.target.value <= 0)
-    searchResultList.innerHTML = `<li>Movies will be show here</li>`;
+  if (e.target.value <= 0) {
+    searchResult.classList.remove("active");
+    inputSearch.classList.remove("active");
+    icon.classList.remove("active");
+  }
 }
 
 function creatList(movies) {
   movies?.forEach((movie) => {
     const li = document.createElement("li");
+    li.classList.add("movieList");
     li.innerHTML = movie;
     searchResultList.appendChild(li);
   });
