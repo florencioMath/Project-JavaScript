@@ -41,39 +41,34 @@ header nav {
 
 .containerResultSearch {
   height: 150px;
-  width: 210px;
+  width: 250px;
   display: none;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   color: #121212;
   background: #f1f1f1;
-  border-radius: 0px 0px.4rem 0.4rem;
   position: absolute;
   padding: 0.5rem;
-  right: 55px;
-  top: 55px;
+  right: 32px;
+  top: 66px;
   overflow-x: scroll;
 }
 
 .movieSearchAnchor {
-  color: #121212;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
+  overflow: hidden;
+  height: fit-content;
+  margin: 0.2rem 0px;
+  border-bottom: 1px solid black;
 }
 
-.movieSearchAnchor::before {
-  content: "";
-  background: #333333;
-  height: 2px;
-  width: 90%;
-  border-radius: 0.5rem;
-  position: absolute;
-  margin-top: 10%;
+.movieSearchAnchor a {
+  color: black;
 }
 
 .movieSearchAnchor:hover {
   font-weight: 700;
+  background: lightgray;
 }
 
 .inputSearch {

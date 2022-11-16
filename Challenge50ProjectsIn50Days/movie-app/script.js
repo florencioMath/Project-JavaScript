@@ -109,23 +109,21 @@ btnSearch.addEventListener("click", (e) => {
   } else {
     inputSearch.classList.add("inputSearchExpand");
     btnSearch.classList.add("btnSearchClick");
+    inputSearch.value = "";
     inputSearch.focus();
   }
 });
 
 async function searchMovie(movie) {
-  let moviesArray = [];
   const response = await fetch(API.SEARCH_API + movie);
   const data = await response.json();
   const movieResult = await data.results;
-  moviesArray = movieResult?.map((movie) => (moviesArray = movie.title));
   return movieResult;
 }
 
 inputSearch.addEventListener("keyup", filterMovies);
 
 async function filterMovies(e) {
-  console.log(e.target.value);
   if (e.target.value.length != 0) {
     movieList.innerHTML = "";
     containerResultSearch.style.display = "flex";
@@ -147,11 +145,10 @@ async function filterMovies(e) {
 }
 
 function creatList(movies) {
-  console.log("creatList", movies);
   movies?.forEach((movie) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.classList.add("movieSearchAnchor");
+    li.classList.add("movieSearchAnchor");
     a.innerText = movie.title;
     a.href = "./movie/index.html";
 
