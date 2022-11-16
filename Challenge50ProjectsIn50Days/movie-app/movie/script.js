@@ -14,7 +14,6 @@ const voteAverage = document.getElementById("voteAverage");
 document.title = movie.title;
 
 wrapperImg.style.backgroundImage = `url("${IMAGES_URL}${movie.backdrop_path}")`;
-console.log(typeof movie.release_date);
 
 movieTitle.innerText = movie.title;
 paragraph.innerText = movie.overview;
