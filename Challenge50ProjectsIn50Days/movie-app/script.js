@@ -119,7 +119,7 @@ async function searchMovie(movie) {
   const data = await response.json();
   const movieResult = await data.results;
   moviesArray = movieResult?.map((movie) => (moviesArray = movie.title));
-  return moviesArray;
+  return movieResult;
 }
 
 inputSearch.addEventListener("keyup", filterMovies);
@@ -131,10 +131,9 @@ async function filterMovies(e) {
     containerResultSearch.style.display = "flex";
 
     const result = await searchMovie(e.target.value);
-    console.log(result);
 
     const filtered = result?.filter((movie) => {
-      const movieNormalized = movie.toLowerCase();
+      const movieNormalized = movie.title.toLowerCase();
       const searchNormalized = e.target.value.toLowerCase();
       return movieNormalized.includes(searchNormalized);
     });
@@ -148,9 +147,19 @@ async function filterMovies(e) {
 }
 
 function creatList(movies) {
+  console.log("creatList", movies);
   movies?.forEach((movie) => {
     const li = document.createElement("li");
-    li.innerHTML = movie;
+    const a = document.createElement("a");
+    a.classList.add("movieSearchAnchor");
+    a.innerText = movie.title;
+    a.href = "./movie/index.html";
+
+    a.addEventListener("click", () => {
+      window.localStorage.setItem("movie", JSON.stringify(movie));
+    });
+
+    li.append(a);
     movieList.appendChild(li);
   });
 }
