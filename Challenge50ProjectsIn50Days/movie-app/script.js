@@ -4,6 +4,7 @@ const btnSearch = document.getElementById("btnSearch");
 const inputSearch = document.getElementById("inputSearch");
 const container = document.getElementById("container");
 const containerResultSearch = document.getElementById("containerResultSearch");
+const movieList = document.getElementById("movieList");
 
 async function getMoviesTrending() {
   const response = await fetch(API.requests.fetchPopular);
@@ -112,32 +113,44 @@ btnSearch.addEventListener("click", (e) => {
   }
 });
 
-inputSearch.addEventListener("keyup", ({ target }) => {
-  const movieToSearch = target.value;
-  if (movieToSearch.length > 0) {
-    getMoviesSearch(movieToSearch);
-    containerResultSearch.style.display = "flex";
-  }
-  containerResultSearch.style.display = "none";
-});
-
-async function getMoviesSearch(movie) {
+async function searchMovie(movie) {
+  let moviesArray = [];
   const response = await fetch(API.SEARCH_API + movie);
   const data = await response.json();
-  const findedMovies = data.results;
+  const movieResult = await data.results;
+  moviesArray = movieResult?.map((movie) => (moviesArray = movie.title));
+  return moviesArray;
+}
 
-  if (findedMovies.length > 0) containerResultSearch.style.display = "flex";
-  else containerResultSearch.style.display = "none";
-  findedMovies.forEach((movie) => {
-    const a = document.createElement("a");
-    a.classList.add("movieSearchAnchor");
-    a.innerText = movie.title;
+inputSearch.addEventListener("keyup", filterMovies);
 
-    a.href = "./movie/index.html";
-    a.addEventListener("click", () => {
-      window.localStorage.setItem("movie", JSON.stringify(movie));
+async function filterMovies(e) {
+  console.log(e.target.value);
+  if (e.target.value.length != 0) {
+    movieList.innerHTML = "";
+    containerResultSearch.style.display = "flex";
+
+    const result = await searchMovie(e.target.value);
+    console.log(result);
+
+    const filtered = result?.filter((movie) => {
+      const movieNormalized = movie.toLowerCase();
+      const searchNormalized = e.target.value.toLowerCase();
+      return movieNormalized.includes(searchNormalized);
     });
 
-    containerResultSearch.appendChild(a);
+    creatList(filtered);
+  }
+
+  if (e.target.value <= 0) {
+    containerResultSearch.style.display = "none";
+  }
+}
+
+function creatList(movies) {
+  movies?.forEach((movie) => {
+    const li = document.createElement("li");
+    li.innerHTML = movie;
+    movieList.appendChild(li);
   });
 }
