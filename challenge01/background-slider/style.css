@@ -2,3 +2,62 @@
   color: wheat;
   font-size: 2rem;
 }
+
+.wrapperSlider {
+  background: lightgrey;
+  height: 60vh;
+  max-width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.slide {
+  min-height: 400px;
+  min-width: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0.5rem;
+}
+
+.wrapperButtons {
+  width: 80vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.btnLeft i {
+  margin-right: -10px;
+  position: absolute;
+}
+
+.btnRigth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.btnRigth i {
+  margin-left: -10px;
+  position: absolute;
+}
+
+.btnLeft:hover,
+.btnRigth:hover {
+  transition: all 1s ease;
+  scale: calc(1.2);
+}
