@@ -1,29 +1,26 @@
-.container p {
-  color: wheat;
-  font-size: 2rem;
-}
-
 .wrapperSlider {
-  background: lightgrey;
-  height: 60vh;
-  max-width: 80vw;
   display: flex;
   align-items: center;
-  justify-content: start;
-  overflow: hidden;
+  justify-content: center;
 }
 
 .slide {
-  min-height: 400px;
-  min-width: 300px;
+  height: 60vh;
+  width: 800px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin: 0.5rem;
+  object-fit: contain;
+  display: none;
+}
+
+.active {
+  display: flex;
 }
 
 .wrapperButtons {
-  width: 80vw;
+  width: 50%;
+  width: 600px;
   position: absolute;
   display: flex;
   align-items: center;
