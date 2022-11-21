@@ -1,4 +1,26 @@
-.container p {
-  color: white;
-  font-size: 2rem;
+.container {
+  flex-direction: column;
+}
+.container button {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+}
+
+.containerClock {
+  height: 70vh;
+  max-width: 800px;
+  width: 80vw;
+  background: #0f0f0f;
+}
+
+.wrapperAnalogClock {
+  height: 50%;
+  width: 100%;
+}
+
+.wrapperDigitalClock {
+  height: 50%;
+  width: 100%;
 }
