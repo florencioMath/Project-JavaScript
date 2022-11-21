@@ -24,3 +24,20 @@
   height: 50%;
   width: 100%;
 }
+
+.digitalTime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--c-paragraph);
+  margin-bottom: 1rem;
+}
+
+.dateTime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--c-paragraph);
+}
