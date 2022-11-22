@@ -18,6 +18,50 @@
 .wrapperAnalogClock {
   height: 50%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analogClock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.needle {
+  height: 2px;
+  width: 50px;
+  background: whitesmoke;
+  border: none;
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+.needle.hour {
+  width: 80px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  width: 100px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.second {
+  width: 100px;
+  background: red;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle-point {
+  height: 15px;
+  width: 15px;
+  background: whitesmoke;
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid red;
 }
 
 .wrapperDigitalClock {
