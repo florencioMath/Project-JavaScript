@@ -39,7 +39,9 @@ const thisWeekDay = weeksDays[date.getDay()];
 const digitalTime = document.getElementById("digitalTime");
 const dateTime = document.getElementById("dateTime");
 const meridiemTime = hour <= 12 ? "AM" : "PM";
-const dateDigitalTime = `${hour}:${minutes} ${meridiemTime} `;
+const dateDigitalTime = `${hour}:${
+  minutes <= 9 ? "0" + minutes : minutes
+} ${meridiemTime} `;
 const dateTimeBody = `${thisWeekDay}, ${thisMonth} ${day}`;
 
 digitalTime.innerText = dateDigitalTime;
