@@ -1,11 +1,41 @@
+:root {
+  --background: #110c0b
+  --text: #110c0b
+  --clock: #282828;
+  --clock-stickers: #737374;
+  --clock-neddle: whitesmoke;
+  --clock-nedle-second: red;
+}
+
+html {
+  transition: all 1s ease-in;
+}
+
+html.dark {
+  --background: #110c0b;
+  --text: whitesmoke;
+}
+
+html.light {
+  --background: whitesmoke;
+  --text: #110c0b;
+}
+
 .container {
   flex-direction: column;
+  background: var(--background);
 }
+
 .container button {
   cursor: pointer;
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;
+  background: var(--text);
+  color: var(--background);
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .containerClock {
@@ -32,12 +62,12 @@
   border-radius: 50%;
   margin: 50px auto;
   padding: 0.4rem;
-  background: #282828;
+  background: var(--background);
 }
 
 .outer-clock-face {
   position: relative;
-  background: #282828;
+  background: var(--background);
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -57,13 +87,13 @@
   position: absolute;
   width: 5px;
   height: 100%;
-  background: #737374;
+  background: var(--clock-stickers);
   z-index: 0;
   left: 49%;
 }
 
 .outer-clock-face .marking {
-  background: #bdbdcb;
+  background: var(--clock-stickers);
   width: 3px;
 }
 
@@ -97,7 +127,7 @@
   left: 10%;
   width: 80%;
   height: 80%;
-  background: #282828;
+  background: var(--background);
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -107,7 +137,7 @@
 .needle {
   height: 5px;
   width: 50px;
-  background: whitesmoke;
+  background: var(--text);
   border: none;
   position: absolute;
   top: 35%;
@@ -127,13 +157,13 @@
 
 .needle.second {
   width: 100px;
-  background: red;
+  background: var(--clock-nedle-second);
 }
 
 .needle-point {
   height: 20px;
   width: 20px;
-  background: whitesmoke;
+  background: var(--text);
   border-radius: 50%;
   position: absolute;
   z-index: 100;
@@ -149,7 +179,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  color: var(--c-paragraph);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -158,5 +188,5 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: var(--c-paragraph);
+  color: var(--text);
 }
