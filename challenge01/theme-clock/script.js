@@ -1,3 +1,25 @@
+const btnColorMode = document.getElementById("colorMode");
+
+btnColorMode.addEventListener("click", colorChange);
+
+function colorChange(e) {
+  e.preventDefault();
+  setMode();
+}
+
+function setMode() {
+  const html = document.querySelector("html");
+  if (html.classList.contains("dark")) {
+    html.classList.remove("dark");
+    html.classList.add("light");
+    btnColorMode.innerHTML = "Dark Mode";
+  } else {
+    html.classList.remove("light");
+    html.classList.add("dark");
+    btnColorMode.innerHTML = "Ligth Mode";
+  }
+}
+
 const weeksDays = [
   "Sunday",
   "Monday",
