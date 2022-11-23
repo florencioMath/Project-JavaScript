@@ -58,7 +58,6 @@ function setDate() {
   minuteEl.style.transform = `rotate(${minsDegrees}deg)`;
 
   secondEl.style.transform = `rotate(${secondsDegrees}deg)`;
-  console.log(hour, minutes, seconds);
 }
 setInterval(setDate, 1000);
 

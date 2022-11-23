@@ -12,7 +12,6 @@
   height: 70vh;
   max-width: 800px;
   width: 80vw;
-  background: #0f0f0f;
 }
 
 .wrapperAnalogClock {
@@ -27,10 +26,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 15rem;
+  width: 15rem;
+  border: 7px solid #181818;
+  border-radius: 50%;
+  margin: 50px auto;
+  padding: 0.4rem;
+  background: #282828;
+}
+
+.outer-clock-face {
+  position: relative;
+  background: #282828;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.outer-clock-face::after,
+.outer-clock-face::before,
+.outer-clock-face .marking {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #737374;
+  z-index: 0;
+  left: 49%;
+}
+
+.outer-clock-face .marking {
+  background: #bdbdcb;
+  width: 3px;
+}
+
+.outer-clock-face .marking.marking-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.outer-clock-face .marking.marking-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.outer-clock-face .marking.marking-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.outer-clock-face .marking.marking-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #282828;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
 }
 
 .needle {
-  height: 2px;
+  height: 5px;
   width: 50px;
   background: whitesmoke;
   border: none;
@@ -38,6 +113,8 @@
   top: 35%;
   transform-origin: 100%;
   right: 50%;
+  z-index: 100;
+  border-radius: 25%;
 }
 
 .needle.hour {
@@ -54,12 +131,12 @@
 }
 
 .needle-point {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   background: whitesmoke;
   border-radius: 50%;
   position: absolute;
-  border: 2px solid red;
+  z-index: 100;
 }
 
 .wrapperDigitalClock {
