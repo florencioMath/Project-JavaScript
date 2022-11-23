@@ -22,7 +22,7 @@ const yearMonths = [
   "December",
 ];
 
-setInterval(() => {
+function setDate() {
   const date = new Date();
   const [day, month, year] = [
     date.getUTCDate(),
@@ -46,17 +46,20 @@ setInterval(() => {
   const hourEl = document.querySelector(".hour");
   const minuteEl = document.querySelector(".minute");
   const secondEl = document.querySelector(".second");
-
   digitalTime.innerText = dateDigitalTime;
   dateTime.innerText = dateTimeBody;
 
-  const scale = (num, in_min, in_max, out_min, out_max) => {
-    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
-  };
+  const hourDegrees = (hour / 12) * 360 + (minutes / 60) * 30 + 90;
+  const minsDegrees = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
+  const secondsDegrees = (seconds / 60) * 360 + 90;
 
-  hourEl.style.transform = `rotate(${scale(hour, 0, 12, 0, 360)}deg)`;
+  hourEl.style.transform = `rotate(${hourDegrees}deg)`;
 
-  minuteEl.style.transform = ` rotate(${scale(minutes, 0, 60, 0, 360)}deg)`;
+  minuteEl.style.transform = `rotate(${minsDegrees}deg)`;
 
-  secondEl.style.transform = `rotate(${scale(seconds, 0, 60, 0, 360)}deg)`;
-}, 1000);
+  secondEl.style.transform = `rotate(${secondsDegrees}deg)`;
+  console.log(hour, minutes, seconds);
+}
+setInterval(setDate, 1000);
+
+setDate();

@@ -27,7 +27,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .needle {
@@ -36,23 +35,22 @@
   background: whitesmoke;
   border: none;
   position: absolute;
-  transform-origin: bottom center;
+  top: 35%;
+  transform-origin: 100%;
+  right: 50%;
 }
 
 .needle.hour {
   width: 80px;
-  transform: translate(-50%, -100%) rotate(0deg);
 }
 
 .needle.minute {
   width: 100px;
-  transform: translate(-50%, -100%) rotate(0deg);
 }
 
 .needle.second {
   width: 100px;
   background: red;
-  transform: translate(-50%, -100%) rotate(0deg);
 }
 
 .needle-point {
