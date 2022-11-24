@@ -1,4 +1,9 @@
 const btnColorMode = document.getElementById("colorMode");
+const digitalTime = document.getElementById("digitalTime");
+const dateTime = document.getElementById("dateTime");
+const hourEl = document.querySelector(".hour");
+const minuteEl = document.querySelector(".minute");
+const secondEl = document.querySelector(".second");
 
 btnColorMode.addEventListener("click", colorChange);
 
@@ -47,27 +52,21 @@ const yearMonths = [
 function setDate() {
   const date = new Date();
   const [day, month, year] = [
-    date.getUTCDate(),
-    date.getUTCMonth() + 1,
-    date.getUTCFullYear(),
+    date.getDate(),
+    date.getMonth(),
+    date.getFullYear(),
   ];
   const [hour, minutes, seconds] = [
     date.getHours(),
     date.getMinutes(),
     date.getSeconds(),
   ];
-  const thisMonth = yearMonths[date.getMonth()];
   const thisWeekDay = weeksDays[date.getDay()];
-  const digitalTime = document.getElementById("digitalTime");
-  const dateTime = document.getElementById("dateTime");
-  const meridiemTime = hour <= 12 ? "AM" : "PM";
-  const dateDigitalTime = `${hour}:${
-    minutes <= 9 ? "0" + minutes : minutes
-  } ${meridiemTime} `;
+  const thisMonth = yearMonths[month];
+
+  const dateDigitalTime = `${hour}:${minutes} `;
   const dateTimeBody = `${thisWeekDay}, ${thisMonth} ${day}`;
-  const hourEl = document.querySelector(".hour");
-  const minuteEl = document.querySelector(".minute");
-  const secondEl = document.querySelector(".second");
+
   digitalTime.innerText = dateDigitalTime;
   dateTime.innerText = dateTimeBody;
 
@@ -76,11 +75,10 @@ function setDate() {
   const secondsDegrees = (seconds / 60) * 360 + 90;
 
   hourEl.style.transform = `rotate(${hourDegrees}deg)`;
-
   minuteEl.style.transform = `rotate(${minsDegrees}deg)`;
-
   secondEl.style.transform = `rotate(${secondsDegrees}deg)`;
 }
+
 setInterval(setDate, 1000);
 
 setDate();
