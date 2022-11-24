@@ -64,7 +64,7 @@ function setDate() {
   const thisWeekDay = weeksDays[date.getDay()];
   const thisMonth = yearMonths[month];
 
-  const dateDigitalTime = `${hour}:${minutes} `;
+  const dateDigitalTime = `${hour}:${minutes <= 9 ? "0" + minutes : minutes}`;
   const dateTimeBody = `${thisWeekDay}, ${thisMonth} ${day}`;
 
   digitalTime.innerText = dateDigitalTime;
