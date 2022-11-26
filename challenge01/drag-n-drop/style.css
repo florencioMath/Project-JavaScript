@@ -1,4 +1,29 @@
-.container p {
-  color: whitesmoke;
-  font-size: 2rem;
+.wrapperDragNDrop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+.box {
+  height: 150px;
+  width: 150px;
+  border: 5px solid white;
+  margin: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.fill {
+  height: 100%;
+  cursor: pointer;
+  background: white;
+  opacity: calc(0.8);
+}
+
+.hide {
+  display: none;
+}
+
+.dragOver {
+  border: dashed 5px white;
 }
