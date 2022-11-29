@@ -55,3 +55,27 @@ function drawLine(x1, y1, x2, y2) {
   contextCanvas.lineWidth = size * 2;
   contextCanvas.stroke();
 }
+
+function updateSize() {
+  sizeEl.innerText = size;
+}
+
+btnIncrease.addEventListener("click", () => {
+  size += 5;
+  if (size > 50) size = 50;
+
+  updateSize();
+});
+
+btnDecrease.addEventListener("click", () => {
+  size -= 5;
+  if (size < 5) size = 5;
+
+  updateSize();
+});
+
+colorEl.addEventListener("change", (e) => (color = e.target.value));
+
+clearEl.addEventListener("click", () =>
+  contextCanvas.clearRect(0, 0, canvas.width, canvas.height)
+);
