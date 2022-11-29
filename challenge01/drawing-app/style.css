@@ -5,9 +5,9 @@
 canvas {
   background: white;
   border: 2px solid white;
-  height: 80vh;
-  width: 80vw;
   border-radius: 0.2rem;
+  /* height: 80vh;
+  width: 80vw; */
 }
 
 .tollbox {
