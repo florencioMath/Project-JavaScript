@@ -6,7 +6,7 @@ const sizeEl = document.getElementById("size");
 const clearEl = document.getElementById("clear");
 
 const contextCanvas = canvas.getContext("2d");
-let size = 10;
+let size = 5;
 let isPressed = false;
 colorEl.value = "#000000";
 let color = colorEl.value;
@@ -79,3 +79,14 @@ colorEl.addEventListener("change", (e) => (color = e.target.value));
 clearEl.addEventListener("click", () =>
   contextCanvas.clearRect(0, 0, canvas.width, canvas.height)
 );
+
+function redraw() {
+  var cc = canvas.getContext("2d");
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+  cc.scale(c.width, c.height);
+}
+
+window.addEventListener("resize", redraw);
+
+redraw();
