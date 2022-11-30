@@ -81,10 +81,8 @@ clearEl.addEventListener("click", () =>
 );
 
 function redraw() {
-  var cc = canvas.getContext("2d");
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
-  cc.scale(c.width, c.height);
 }
 
 window.addEventListener("resize", redraw);
