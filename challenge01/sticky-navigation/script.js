@@ -31,7 +31,7 @@ function fixHeader() {
     links.forEach((li) => li.classList.remove("active-nav-li"));
   }
 
-  if (window.scrollY > header.offsetHeight + 1800) {
+  if (window.scrollY > header.offsetHeight + 700 + window.innerHeight) {
     header.classList.add("active-white");
     links.forEach((li) => li.classList.remove("active-nav-li"));
   } else {
