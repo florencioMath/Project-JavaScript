@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 .page {
   height: 100vh;
   width: 100%;
@@ -56,6 +60,7 @@ header {
   position: fixed;
   color: white;
   background: black;
+  transition: all 0.5s ease;
 }
 
 nav {
@@ -65,9 +70,21 @@ nav {
   justify-content: space-between;
 }
 
-.active {
+.active-black {
+  height: 5vh;
+  border-bottom: 1px solid black;
+  color: black;
+  background: transparent;
+}
+
+.active-white {
   height: 5vh;
   border-bottom: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.active-nav-li {
   color: black;
 }
 

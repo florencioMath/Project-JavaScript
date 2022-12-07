@@ -1,8 +1,10 @@
+const header = document.querySelector(".header");
 const devNameEl = document.getElementById("dev-name");
 const devBioEl = document.getElementById("dev-bio");
 const devImgEl = document.getElementById("img-dev");
 const devLoginEl = document.getElementById("login-dev");
 const navLinks = document.querySelectorAll("nav-links");
+const links = document.querySelectorAll(".links");
 
 async function getDataGithub() {
   let response = await fetch("https://api.github.com/users/florencioMath");
@@ -18,17 +20,21 @@ function creatGithubCard(data) {
   devLoginEl.innerHTML = `@${data.login}`;
 }
 
-const header = document.querySelector(".header");
 window.addEventListener("scroll", fixHeader);
 
 function fixHeader() {
   if (window.scrollY > header.offsetHeight + 150) {
-    header.classList.add("active");
+    header.classList.add("active-black");
+    links.forEach((li) => li.classList.add("active-nav-li"));
   } else {
-    header.classList.remove("active");
+    header.classList.remove("active-black");
+    links.forEach((li) => li.classList.remove("active-nav-li"));
   }
 
-  if (window.scrollY > 934) {
-    navLinks.forEach((navLink) => (navLink.display = none));
+  if (window.scrollY > header.offsetHeight + 1800) {
+    header.classList.add("active-white");
+    links.forEach((li) => li.classList.remove("active-nav-li"));
+  } else {
+    header.classList.remove("active-white");
   }
 }
