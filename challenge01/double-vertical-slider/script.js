@@ -22,10 +22,11 @@ btnUp.addEventListener("click", () => {
 });
 
 function setActiveimage() {
-  images.forEach((text) => {
-    text.classList.remove("active");
+  images.forEach((image) => {
+    image.classList.remove("active");
   });
 
+  images[activeSlide].style.animation = "slide-up 0.5s forwards";
   images[activeSlide].classList.add("active");
 }
 
@@ -34,5 +35,6 @@ function setActiveText() {
     text.classList.remove("active");
   });
 
+  texts[activeSlide].style.animation = "slide-down 0.5s forwards";
   texts[activeSlide].classList.add("active");
 }
