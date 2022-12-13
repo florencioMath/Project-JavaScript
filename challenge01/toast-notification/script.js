@@ -1,25 +1,18 @@
 const btnNotification = document.getElementById("notification");
 const toast = document.getElementById("toast");
 const container = document.querySelector(".container");
+const toasts = document.getElementById("toasts");
 
-btnNotification.addEventListener("click", showToast);
-
-function showToast() {
-  createToast();
-  // setTimeout(hideToast, 2000);
-}
-
-function hideToast(div) {
-  setTimeout(() => {
-    div.style.display = "none";
-  }, 1000);
-}
+btnNotification.addEventListener("click", createToast);
 
 function createToast() {
-  const div = document.createElement("div");
-  div.classList.add("toast");
-  div.innerHTML = "Mensage here";
-  div.style.display = "flex";
-  container.appendChild(div);
-  hideToast(div);
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.innerHTML = "Mensage here";
+  toast.style.display = "flex";
+  toasts.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
 }
