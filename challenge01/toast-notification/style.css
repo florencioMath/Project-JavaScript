@@ -23,6 +23,18 @@ button:active {
   margin-top: 1rem;
 }
 
+.toast.info {
+  color: grey;
+}
+
+.toast.success {
+  color: blue;
+}
+
+.toast.error {
+  color: red;
+}
+
 .toasts {
   position: fixed;
   bottom: 10px;
