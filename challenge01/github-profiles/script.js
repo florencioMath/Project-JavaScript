@@ -1,6 +1,5 @@
 const APIURL = "https://api.github.com/users/";
-
-const container = document.getElementById("container");
+const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
@@ -47,7 +46,7 @@ function createUserCard(user) {
     </div>
   </div>
     `;
-  container.innerHTML = cardHTML;
+  main.innerHTML = cardHTML;
 }
 
 function createErrorCard(msg) {
@@ -57,7 +56,7 @@ function createErrorCard(msg) {
         </div>
     `;
 
-  container.innerHTML = cardHTML;
+  main.innerHTML = cardHTML;
 }
 
 function addReposToCard(repos) {
