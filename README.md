@@ -84,13 +84,19 @@ You need Android Studio
 
 _Below is an example of how you can install and set up the app._
 
-You can download the apk download of the app in the apk folder.
+Below is an example of how you can install and set up the app.
+
+You can click the deploy on GitHub pages or follow the steps bellow
+
+Deploy: Deploy: <a href="https://florenciomath.github.io/Project-JavaScript/">Javascript Challenges</a> 
+
 
 1. Clone the repo
    ```sh
-   https://github.com/florencioMath/University-ADS-HandsOnPizza.git
+    https://github.com/florencioMath/Project-JavaScript.git
    ```
-2. Use 
+2. Use Visual Studio Codeto to open the repository
+3. Install the extension Live Server by Ritwick Dey and execute it.
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
