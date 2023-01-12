@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-<img width="100" src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="Javascript logo" />
+<img width="100" src="https://github.com/florencioMath/Project-JavaScript/blob/main/readmeFiles/jsLogo.png?raw=true" alt="Javascript logo" />
 <p align="center">Javascript Challenges</p>
 </div>
 
@@ -43,29 +43,22 @@ This project was developed with the following technologies:
 <summary>Take a look at how it turned out:</summary>
   <br>
   Under construction
-  <!--
   <tr>
     <td align="center">
-        <p align="center">Hands On Pizza overview</p>
-      <img src="https://github.com/florencioMath/University-ADS-HandsOnPizza/blob/main/readmeFiles/handsOnPizzaOverview.gif?raw=true"  alt="Hands On Pizza overview"/>
+        <p align="center">Javascript Challenges overview</p>
+      <img src="https://github.com/florencioMath/Project-JavaScript/blob/main/readmeFiles/javascriptChallengesOverview.gif?raw=true"  alt="Javascript Challenges overview"/>
     </td>
     <br>
     <td align="center">
-        <p align="center">Hands On Pizza adding a cliente</p>
-      <img src="https://github.com/florencioMath/University-ADS-HandsOnPizza/blob/main/readmeFiles/handsOnPizzaAdicionandoCliente.gif?raw=true" alt="Hands On Pizza adding a cliente" />
+        <p align="center">Javascript Challenges Expanding Cards</p>
+      <img src="https://github.com/florencioMath/Project-JavaScript/blob/main/readmeFiles/javascriptChallengesExpandingCards.gif?raw=true" alt="Javascript Challenges Expanding Cards" />
     </td>
     <br>
     <td align="center">
-        <p align="center">Hands On Pizza editing a pizza</p>
-      <img src="https://github.com/florencioMath/University-ADS-HandsOnPizza/blob/main/readmeFiles/handsOnPizzaEditando.gif?raw=true" alt="Hands On Pizza editing a pizza" />
-    </td>
-    <br>
-     <td align="center">
-        <p align="center">Hands on pizza excluding a supplier</p>
-      <img src="https://github.com/florencioMath/University-ADS-HandsOnPizza/blob/main/readmeFiles/handsOnPizzaExcluindoFornecedor.gif?raw=true" alt="Hands on pizza excluding a supplier" />
+        <p align="center">Javascript Challenges Movie App</p>
+      <img src="https://github.com/florencioMath/Project-JavaScript/blob/main/readmeFiles/javascriptChallengesMovieApp.gif?raw=true" alt="Javascript Challenges Movie App" />
     </td>
   </tr>
-  -->
   </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
